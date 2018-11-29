@@ -1,0 +1,27 @@
+#新建文档-复制代码-File Encoding :会自动识别为gbk---注意观察
+#复制前：utf-8
+#复制后：gbk；在右下角直接更改为utf-8，还是无法运行
+#先更改，再复制可以运行
+'''
+我很好
+b'\xe6\x88\x91\xe5\xbe\x88\xe5\xa5\xbd'
+b'\xce\xd2\xba\xdc\xba\xc3'
+<class 'str'>
+<class 'bytes'>
+<class 'bytes'>
+'''
+s='林我很好'
+
+#s可以直接encode成任意编码格式
+s1=s.encode('utf-8')#中文3字节
+s2=s.encode('gbk')#中文2字节
+
+
+
+print(s) #林
+print(s1) #b'\xe6\x9e\x97' 在python3中，是什么就打印什么
+print(s2) #b'\xc1\xd6' 同上
+
+print(type(s)) #<class 'str'>
+print(type(s1)) #<class 'bytes'>
+print(type(s2)) #<class 'bytes'>
